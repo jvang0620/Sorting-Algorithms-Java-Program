@@ -1,0 +1,6 @@
+How to Run the Program:
+
+type:
+javac SortingAlgorithms.java
+
+java SortingAlgorithms
