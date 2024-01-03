@@ -11,8 +11,7 @@ import com.example.sort.SelectionSort;
 import com.example.sort.ShellSort;
 import com.example.sort.SortingAlgorithmInterface;
 
-
-public class SortingAlgorithms {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -43,6 +42,8 @@ public class SortingAlgorithms {
         sortingAlgorithm.sort(array);
 
         System.out.println("Sorted Array: " + Arrays.toString(array));
+
+        scanner.close();
     }
 
     private static SortingAlgorithmInterface getSortingAlgorithm(int choice) {
