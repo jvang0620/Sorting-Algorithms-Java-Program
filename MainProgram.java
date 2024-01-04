@@ -37,11 +37,15 @@ public class MainProgram {
         System.out.println("7. Shell Sort");
 
         int choice = scanner.nextInt();
-
         SortingAlgorithmInterface sortingAlgorithm = getSortingAlgorithm(choice);
         sortingAlgorithm.sort(array);
 
+        long startTime = System.currentTimeMillis();
+        long endTime = System.currentTimeMillis();
+        long executionTime = endTime - startTime;
+
         System.out.println("Sorted Array: " + Arrays.toString(array));
+        System.out.println("Execution Time: " + executionTime + " milliseconds");
 
         scanner.close();
     }
