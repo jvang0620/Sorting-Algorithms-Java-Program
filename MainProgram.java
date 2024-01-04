@@ -11,7 +11,7 @@ import com.example.sort.SelectionSort;
 import com.example.sort.ShellSort;
 import com.example.sort.SortingAlgorithmInterface;
 
-public class Main {
+public class MainProgram {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
