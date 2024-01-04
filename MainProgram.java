@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 // Import individual sorting algorithm classes
@@ -18,14 +19,10 @@ public class MainProgram {
         System.out.print("Enter the size of the array: ");
         int size = scanner.nextInt();
 
-        int[] array = new int[size];
-        System.out.println("Enter the elements of the array:");
+        int[] array = generateRandomArray(size);
 
-        for (int i = 0; i < size; i++) {
-            array[i] = scanner.nextInt();
-        }
-
-        System.out.println("Original Array: " + Arrays.toString(array));
+        /* COMMENT OR UNCOMMENT to view or not view original array */
+        // System.out.println("Original Array: " + Arrays.toString(array));
 
         System.out.println("Choose a sorting algorithm:");
         System.out.println("1. Bubble Sort");
@@ -40,14 +37,32 @@ public class MainProgram {
         SortingAlgorithmInterface sortingAlgorithm = getSortingAlgorithm(choice);
         sortingAlgorithm.sort(array);
 
+        // Calculates execution time
         long startTime = System.currentTimeMillis();
         long endTime = System.currentTimeMillis();
         long executionTime = endTime - startTime;
 
+        /* COMMENT OR UNCOMMENT to view or not view Sorted array */
         System.out.println("Sorted Array: " + Arrays.toString(array));
+
         System.out.println("Execution Time: " + executionTime + " milliseconds");
 
         scanner.close();
+    }
+
+    // Generate a random array of size elements with values between 1 and 200
+    static int[] generateRandomArray(int size) {
+        Random random = new Random();
+        int[] array = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(200) + 1; // Generates a random number between 1 and 200
+        }
+
+        /* COMMENT OR UNCOMMENT to view or not view Generated array */
+        System.out.println("Generated Array: " + Arrays.toString(array));
+
+        return array;
     }
 
     private static SortingAlgorithmInterface getSortingAlgorithm(int choice) {
