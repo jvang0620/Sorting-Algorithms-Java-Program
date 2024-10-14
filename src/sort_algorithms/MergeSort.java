@@ -1,4 +1,6 @@
-package com.example.sort;
+package src.sort_algorithms;
+
+import src.helperInterface.SortingAlgorithmInterface;
 
 /**
  * Implementation of the Merge Sort algorithm.
